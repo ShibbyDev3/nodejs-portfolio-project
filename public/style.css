@@ -1,0 +1,231 @@
+/*Bootstrap Override*/
+body.modal-open{
+  padding: 0 !important;
+}
+
+div.card {
+  border: #420e11 2px solid;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+  padding: 0;
+}
+
+.modal-body .form-control{
+  font-size: 1.6rem;
+}
+
+/* general styles*/
+html {
+  font-size: 62.5%;
+}
+
+html body {
+  font-size: 1.6rem;
+  background-color: #fafafa;
+}
+
+section {
+  padding: 2.5rem 0;
+}
+
+section h1,
+section h2,
+section h3,
+h4,
+h5,
+h6 {
+  font-family: "Kanit", sans-serif;
+  color: #a8232a;
+}
+
+section h1 {
+  font-size: 3.2rem;
+}
+
+section h2 {
+  font-size: 2.8rem;
+}
+
+section h3 {
+  font-size: 2rem;
+}
+
+section p {
+  margin-bottom: 3rem;
+}
+
+section ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 3rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*header & Footer*/
+header,
+footer {
+  background-color: #5b1317;
+}
+
+footer {
+  padding-bottom: 1.5rem;
+}
+
+header {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header .navbar {
+  gap: 1.5rem;
+}
+
+header .navbar-nav {
+  gap: 1rem;
+}
+
+.cart{
+  color: #ffffff;
+  position: relative;
+  text-decoration: none;
+  font-size: 2.5rem
+}
+
+.cart:hover{
+  color:rgba(255,255,255,0.7);
+}
+
+.indicator{
+  width: 2rem;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  background-color:#E8313A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 0;
+  right: -40%;
+  font-weight: bold
+}
+
+header .navbar-brand,
+footer .navbar-brand {
+  font-family: "Kanit", sans-serif;
+  font-size: 4rem;
+  color: #ffffff;
+}
+
+footer .navbar {
+  flex-direction: column;
+}
+
+footer .navbar-brand {
+  margin-right: 0;
+  text-align: center;
+}
+
+footer .social-logos {
+  text-align: center;
+}
+
+footer .navbar-nav {
+  gap: 1rem;
+}
+
+.btn.logout{
+background: #a8232a;
+color: #ffffff;
+font-size: 1.6rem;
+}
+
+.btn.logout:hover{
+color: #ffffff;
+}
+
+
+/* menu */
+.Popcorn {
+  background-image: url(assets/popcorn.jpg);
+}
+
+.Nachos {
+  background-image: url(assets/nacho.jpg);
+}
+
+.Bratwurst {
+  background-image: url(assets/bratwurst.jpg);
+}
+
+.Pizza {
+  background-image: url(assets/pizza.jpg);
+}
+
+.Soda {
+  background-image: url(assets/soda.jpg);
+}
+
+.Beer {
+  background-image: url(assets/beer.jpg);
+}
+
+.Sour {
+  background-image: url(assets/sourworms.jpg);
+}
+
+.Chocolate {
+  background-image: url(assets/chocolate.jpg);
+}
+
+
+
+/* Media Query*/
+
+@media screen and (min-width: 768px) {
+  .modal-body .form-control {
+    font-size: 1.8rem;
+  }
+
+  html body {
+    font-size: 1.8rem;
+  }
+
+  section {
+    padding: 5rem 0;
+  }
+
+  section h1 {
+    font-size: 4.4rem;
+  }
+
+  section h2 {
+    font-size: 3rem;
+  }
+
+  section h3 {
+    font-size: 2.4rem;
+  }
+
+  footer {
+    padding-bottom: 0rem;
+  }
+
+  footer .navbar-brand {
+    text-align: left;
+    display: flex;
+    align-items: center;
+  }
+
+  footer .social-logos {
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 0.5rem;
+  }
+}
