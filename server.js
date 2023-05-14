@@ -3,7 +3,7 @@ const morgan = require("morgan");
 const campsiteRouter = require("./routes/campsiteRouter");
 
 const hostname = "localhost";
-const port = 3000;
+const port = process.env.PORT || 3030;
 
 const app = express();
 app.use(morgan("dev"));
