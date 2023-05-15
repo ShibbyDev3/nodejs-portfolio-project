@@ -1,24 +1,9 @@
 const express = require("express");
-const morgan = require("morgan");
-const campsiteRouter = require("./routes/campsiteRouter");
-
-const hostname = "localhost";
-const port = process.env.PORT || 3030;
-
 const app = express();
-app.use(morgan("dev"));
-app.use(express.json());
+const PORT = process.env.PORT || 3030;
 
-app.use("/campsites", campsiteRouter);
+// your code
 
-app.use(express.static(__dirname + "/public"));
-
-app.use((req, res) => {
-  res.statusCode = 200;
-  res.setHeader("Content-Type", "text/html");
-  res.end("<html><body><h1>This is an Express Server</h1></body></html>");
-});
-
-app.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
 });
