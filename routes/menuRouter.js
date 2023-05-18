@@ -1,9 +1,10 @@
 const express = require('express');
+const cors = require('./cors');
 const Menu = require('../models/menuModel');
 
 const menuRouter = express.Router();
 
-menuRouter.get('/', (req, res) => {
+menuRouter.get('/', cors.cors, (req, res) => {
     Menu.find()
     .then(menuItems => {
         res.statusCode = 200;

@@ -12,6 +12,9 @@ app.use(express.json());
 const menuRoutes = require('./routes/menuRouter');
 app.use('/api/menu', menuRoutes);
 
+const movieRoutes = require('./routes/movieRouter');
+app.use('/api/movies', movieRoutes);
+
 connect.then(() => console.log('Connected correctly to server'), 
     err => console.log(err)
 );
