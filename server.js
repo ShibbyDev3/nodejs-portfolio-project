@@ -6,11 +6,11 @@ const config = require('./config');
 const mongoose = require('mongoose');
 
 const url = config.mongoUrl;
-const connect = mongoose.connect(url);
+const connect = mongoose.connect(url,{dbName: "moviehouse"});
 app.use(express.json());
 //Routes
-const testRoutes = require('./routes/testRouter');
-app.use('/api/test', testRoutes);
+const menuRoutes = require('./routes/menuRouter');
+app.use('/api/menu', menuRoutes);
 
 connect.then(() => console.log('Connected correctly to server'), 
     err => console.log(err)
