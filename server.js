@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3030;
-
 const config = require('./config');
 const mongoose = require('mongoose');
+const passport = require('passport');
+app.use(passport.initialize());
 
 const url = config.mongoUrl;
 const connect = mongoose.connect(url,{dbName: "moviehouse"});
@@ -14,6 +15,10 @@ app.use('/api/menu', menuRoutes);
 
 const movieRoutes = require('./routes/movieRouter');
 app.use('/api/movies', movieRoutes);
+
+
+const userRoutes = require('./routes/userRouter');
+app.use('/api/users', userRoutes);
 
 connect.then(() => console.log('Connected correctly to server'), 
     err => console.log(err)
