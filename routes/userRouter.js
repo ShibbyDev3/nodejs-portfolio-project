@@ -6,7 +6,7 @@ const authenticate = require('../authenticate');
 
 const userRouter = express.Router();
 
-userRouter.post('/signup', cors.corsWithOptions, (req, res) => {
+userRouter.post('/signup', cors.cors, (req, res) => {
     User.register(
         new User({username: req.body.username}),
         req.body.password,
@@ -29,11 +29,12 @@ userRouter.post('/signup', cors.corsWithOptions, (req, res) => {
   userRouter.post('/login', cors.corsWithOptions, passport.authenticate('local'), (req, res) => {
     const token = authenticate.getToken({_id: req.user._id});
     res.statusCode = 200;
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Content-Type', 'application/json');
-    res.json({success: true, token: token, status: 'You are successfully logged in!'});
+    res.json({success: true, username: req.user.username, points: req.user.points });
   });
   
-  userRouter.get('/logout', cors.corsWithOptions, (req, res, next) => {
+  userRouter.get('/logout', cors.cors, (req, res, next) => {
       if (req.session) {
           req.session.destroy();
           res.clearCookie('session-id');

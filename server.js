@@ -9,6 +9,10 @@ app.use(passport.initialize());
 const url = config.mongoUrl;
 const connect = mongoose.connect(url,{dbName: "moviehouse"});
 app.use(express.json());
+const cors = require('cors');
+app.use(cors({
+    origin: '*'
+}));
 //Routes
 const menuRoutes = require('./routes/menuRouter');
 app.use('/api/menu', menuRoutes);
